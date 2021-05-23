@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragments.HomeFragment">
+
+    <TextView
+        android:id="@+id/heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin"
+        android:fontFamily="@font/poppins_semibold"
+        android:padding="@dimen/padding_8dp"
+        android:text="@string/notes_app"
+        android:textColor="@color/grey"
+        android:textSize="25dp" />
+
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/search_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/heading"
+        android:textCursorDrawable="@null"
+        app:queryHint="Search Notes"
+        app:iconifiedByDefault="false"
+        app:queryBackground="@null" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/notes_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="60dp"
+        android:layout_below="@+id/search_bar"
+         />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/add_notes"
+        android:layout_margin="@dimen/padding_8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:layout_marginBottom="@dimen/marginbottom"
+        app:cardCornerRadius="@dimen/corner_radius_large"
+        android:layout_alignParentBottom="true"
+        app:strokeColor="@color/color_primary"
+        app:strokeWidth="1dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin"
+            android:orientation="vertical">
+
+            <TextView
+                android:fontFamily="@font/poppins_semibold"
+                android:textSize="@dimen/text_size"
+                android:id="@+id/add_notes_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color_primary"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/add_notes" />
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+
+</RelativeLayout>

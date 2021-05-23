@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragments.HomeFragment">
+
+    <RelativeLayout
+        android:id="@+id/toolbar_container"
+        android:layout_marginTop="@dimen/margintop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/back_button"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="@dimen/margin"
+            android:padding="@dimen/padding"
+            android:src="@drawable/ic_baseline_arrow_back_24" />
+
+        <TextView
+            android:id="@+id/heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/back_button"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="@string/add_note"
+            android:textColor="@color/grey"
+            android:padding="@dimen/padding"
+            android:textSize="25dp" />
+    </RelativeLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/title"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar_container"
+        android:layout_margin="@dimen/padding_8dp"
+        android:hint="@string/title_goes_here"
+        app:hintAnimationEnabled="true"
+        app:hintTextColor="@color/color_primary_light"
+        app:startIconTint="@color/color_primary">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/title_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/description"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@id/title"
+        android:layout_margin="@dimen/padding_8dp"
+        android:hint="@string/your_description_goes_here"
+        app:hintAnimationEnabled="true"
+        app:hintTextColor="@color/color_primary_light"
+        app:startIconTint="@color/color_primary">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/description_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/store_note"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/padding_8dp"
+        android:layout_marginBottom="@dimen/marginbottom"
+        android:clickable="true"
+        app:cardCornerRadius="@dimen/corner_radius_large"
+        app:strokeColor="@color/color_primary"
+        app:strokeWidth="1dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/add_notes_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="@string/add_note_text"
+                android:textColor="@color/color_primary"
+                android:textSize="@dimen/text_size" />
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+
+</RelativeLayout>
